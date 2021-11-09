@@ -217,7 +217,7 @@ static UITextFieldViewMode _underlineViewModeDefault = UITextFieldViewModeWhileE
   copy.underlineHeightActive = self.underlineHeightActive;
   copy.underlineHeightNormal = self.underlineHeightNormal;
   copy.underlineViewMode = self.underlineViewMode;
-
+  copy.agoraSearchBar = self.agoraSearchBar;
   return copy;
 }
 
@@ -238,7 +238,7 @@ static UITextFieldViewMode _underlineViewModeDefault = UITextFieldViewModeWhileE
   _underlineHeightNormal = [self class].underlineHeightNormalDefault;
   _underlineViewMode = [self class].underlineViewModeDefault;
   _textInput.hidesPlaceholderOnInput = NO;
-
+  _agoraSearchBar = NO;
   [self forceUpdatePlaceholderY];
 }
 
@@ -523,7 +523,7 @@ static UITextFieldViewMode _underlineViewModeDefault = UITextFieldViewModeWhileE
                                       multiplier:1
                                         constant:leadingConstant];
     }
-    self.placeholderAnimationConstraintLeading.constant = leadingConstant;
+    self.placeholderAnimationConstraintLeading.constant = leadingConstant + (_agoraSearchBar ? 25 : 0);
 
     if (!self.placeholderAnimationConstraintTop) {
       self.placeholderAnimationConstraintTop =
@@ -535,7 +535,7 @@ static UITextFieldViewMode _underlineViewModeDefault = UITextFieldViewModeWhileE
                                       multiplier:1
                                         constant:offset.vertical];
     }
-    self.placeholderAnimationConstraintTop.constant = offset.vertical;
+    self.placeholderAnimationConstraintTop.constant = offset.vertical + (_agoraSearchBar ? 5 : 0);
 
     CGFloat trailingConstant = [self floatingPlaceholderAnimationConstraintTrailingConstant:insets
                                                                                      offset:offset];
