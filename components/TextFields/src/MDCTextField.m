@@ -145,7 +145,7 @@ static const CGFloat kButtonFontOpacity = (CGFloat)0.54f;
 #pragma mark - Underline View Implementation
 
 - (void)setupUnderlineConstraints {
-  underlineLeading =
+  _underlineLeading =
       [NSLayoutConstraint constraintWithItem:self.underline
                                    attribute:NSLayoutAttributeLeading
                                    relatedBy:NSLayoutRelationEqual
@@ -153,8 +153,8 @@ static const CGFloat kButtonFontOpacity = (CGFloat)0.54f;
                                    attribute:NSLayoutAttributeLeading
                                   multiplier:1
                                     constant:0];
-  underlineLeading.priority = UILayoutPriorityDefaultLow;
-  underlineLeading.active = YES;
+  _underlineLeading.priority = UILayoutPriorityDefaultLow;
+  _underlineLeading.active = YES;
 
   NSLayoutConstraint *underlineTrailing =
       [NSLayoutConstraint constraintWithItem:self.underline
