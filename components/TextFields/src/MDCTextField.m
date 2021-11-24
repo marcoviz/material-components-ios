@@ -145,7 +145,7 @@ static const CGFloat kButtonFontOpacity = (CGFloat)0.54f;
 #pragma mark - Underline View Implementation
 
 - (void)setupUnderlineConstraints {
-  NSLayoutConstraint *underlineLeading =
+  underlineLeading =
       [NSLayoutConstraint constraintWithItem:self.underline
                                    attribute:NSLayoutAttributeLeading
                                    relatedBy:NSLayoutRelationEqual
