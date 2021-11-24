@@ -65,4 +65,6 @@ __deprecated_msg(
 @property(nonatomic, copy, nullable) void (^traitCollectionDidChangeBlock)
     (MDCTextField *_Nonnull textField, UITraitCollection *_Nullable previousTraitCollection);
 
+@property(nonatomic, nullable, strong) NSLayoutConstraint *underlineLeading;
+
 @end
