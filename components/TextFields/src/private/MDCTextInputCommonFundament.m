@@ -658,7 +658,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
   }
 
   [self.textInput clearText];
-  if (self.textInput.isFirstResponder) {
+//   if (self.textInput.isFirstResponder) {
     if ([self.textInput isKindOfClass:[MDCMultilineTextField class]]) {
       MDCMultilineTextField *textField = (MDCMultilineTextField *)self.textInput;
       [[NSNotificationCenter defaultCenter] postNotificationName:UITextViewTextDidChangeNotification
@@ -670,7 +670,7 @@ static inline UIColor *MDCTextInputUnderlineColor() {
                         object:self.textInput];
       [textField sendActionsForControlEvents:UIControlEventEditingChanged];
     }
-  }
+//   }
 }
 
 #pragma mark - Properties Implementation
